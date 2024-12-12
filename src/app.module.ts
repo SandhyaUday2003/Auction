@@ -1,7 +1,7 @@
 import { AppRoutingModule } from './app/app.routes';
 import { LoginComponent } from './app/login/login.component';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     // Other modules
-    // FormsModule,
+    FormsModule,
     AppRoutingModule // Import the AppRoutingModule
   ]
 })
