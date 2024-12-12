@@ -2,16 +2,20 @@ import { AppRoutingModule } from './app/app.routes';
 import { LoginComponent } from './app/login/login.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PasswordrecoveryComponent } from './app/passwordrecovery/passwordrecovery.component';
+import { SignupComponent } from './app/signup/signup.component';
 
 @NgModule({
   declarations: [
     // Other components
-    LoginComponent, // Ensure LoginComponent is declared here
+    PasswordrecoveryComponent,
+    SignupComponent,
+    LoginComponent 
   ],
   imports: [
     // Other modules
     FormsModule,
-    AppRoutingModule // Import the AppRoutingModule
+    AppRoutingModule
   ]
 })
 export class AppModule {}

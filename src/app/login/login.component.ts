@@ -13,5 +13,6 @@ export class LoginComponent {
 
   onSubmit() {
     console.log('Login successful:', this.user);
+
   }
 }
