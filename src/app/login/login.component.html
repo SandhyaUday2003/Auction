@@ -24,8 +24,16 @@
         [(ngModel)]="user.password"
         name="password"
         required
+        minlength="8"
         placeholder="Enter your password"
+        #password="ngModel"
       />
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+        <small *ngIf="password.errors?.required">Password is required.</small>
+        <small *ngIf="password.errors?.minlength">
+          Password must be at least 8 characters long.
+        </small>
+      </div>
     </div>
 
     <button type="submit" class="btn">Login</button>
