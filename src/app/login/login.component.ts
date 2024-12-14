@@ -15,7 +15,8 @@ export class LoginComponent {
     password: ''
   };
 
-  onSubmit() {
+  onSubmit(loginForm:any) {
     console.log('Login successful:', this.user);
+    loginForm.resetForm();
   }
 }
