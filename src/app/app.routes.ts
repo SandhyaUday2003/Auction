@@ -6,10 +6,11 @@ import { PasswordrecoveryComponent } from './passwordrecovery/passwordrecovery.c
 
 
 export const routes: Routes = [
-    // {path: '', component:SignupComponent},
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent},
-    {path: 'passwordrecovery', component:PasswordrecoveryComponent},
+    {path: 'password-recovery', component:PasswordrecoveryComponent},
+    { path: 'sign-up', component: SignupComponent },
+
 ];
 
 @NgModule({

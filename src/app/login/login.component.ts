@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';  // Import CommonModule
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports:[FormsModule]
+  imports: [RouterModule,CommonModule, FormsModule]  // Include CommonModule here
 })
 export class LoginComponent {
   user = {
