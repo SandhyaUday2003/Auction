@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Import CommonModule
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,14 @@ export class LoginComponent {
     password: ''
   };
 
-  onSubmit(loginForm:any) {
-    console.log('Login successful:', this.user);
-    loginForm.resetForm();
+  onSubmit(loginForm:NgForm) {
+    if (loginForm.valid) {
+      console.log('Login successful:', this.user);
+  
+      // Reset the form after successful login
+      loginForm.resetForm();
+    } else {
+      console.error('Form is invalid. Please fill all required fields correctly.');
+    }
   }
 }

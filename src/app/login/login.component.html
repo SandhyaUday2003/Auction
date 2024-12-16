@@ -1,33 +1,52 @@
 <div class="login-container">
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="login-form">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="login-form" novalidate>
     <h1 class="center-text">Bidnow</h1>
     <h2>Login</h2>
 
     <!-- Email Field -->
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" id="email" [(ngModel)]="user.email" name="email" required email placeholder="Enter your email"
-        #email="ngModel" class="form-control" />
-      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="user.email"
+        name="email"
+        required
+        email
+        placeholder="Enter your email"
+        #email="ngModel"
+        class="form-control"
+      />
+      <div *ngIf="loginForm.submitted && email.invalid" class="error">
         <small *ngIf="email.errors?.['required']">Email is required.</small>
         <small *ngIf="email.errors?.['email']">Enter a valid email address.</small>
       </div>
     </div>
 
-
     <!-- Password Field -->
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" id="password" [(ngModel)]="user.password" name="password" required minlength="8"
-        placeholder="Enter your password" #password="ngModel" class="form-control" />
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="user.password"
+        name="password"
+        required
+        minlength="8"
+        placeholder="Enter your password"
+        #password="ngModel"
+        class="form-control"
+      />
+      <div *ngIf="loginForm.submitted && password.invalid" class="error">
         <small *ngIf="password.errors?.['required']">Password is required.</small>
-        <small *ngIf="password.errors?.['minlength']">Password must be at least 8 characters long.</small>
+        <small *ngIf="password.errors?.['minlength']">
+          Password must be at least 8 characters long.
+        </small>
       </div>
     </div>
 
     <!-- Submit Button -->
-    <button type="submit" class="btn" [disabled]="loginForm.invalid">
+    <button type="submit" class="btn">
       Login
     </button>
 
@@ -38,7 +57,15 @@
 
     <!-- Sign Up -->
     <div class="signup">
-      <p>Don't have an account ? <a routerLink="/sign-up" class="font-semibold underline transition-all duration-150 ease-linear text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500"> SignUp</a> </p>
+      <p>
+        Don't have an account ?
+        <a
+          routerLink="/sign-up"
+          class="font-semibold underline transition-all duration-150 ease-linear text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500"
+        >
+          SignUp</a
+        >
+      </p>
     </div>
   </form>
 </div>

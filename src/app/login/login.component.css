@@ -23,6 +23,7 @@
 
 .form-group {
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .form-group label {
@@ -40,7 +41,7 @@
 }
 
 .btn {
-  width: 100%;
+  width: 96%;
   padding: 10px;
   border: none;
   background-color: #10ca29f4;
